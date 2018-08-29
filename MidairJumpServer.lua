@@ -1,5 +1,5 @@
 --[[
-	If you tried to make a script that allows your player to midair jumps using
+	If you tried to make a script that allows your player to midair jump using
 	the tutorial found here (as of 8/29/2018):
 	
 	http://wiki.roblox.com/index.php?title=User:Memory_Address/DoubleJump
