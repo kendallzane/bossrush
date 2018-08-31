@@ -11,13 +11,11 @@ function step(currentBrick)
 	--up, down, left, right, above, below;
 	
 	local freeArray = {1, 1, 1, 1, 1, 1};
-	local region;
-	local partCheck = {};
 	local numFree = 0;
 	local toBuild = 0;
 	
 	local direction;
-	local ray 
+	local ray;
 	
 	ray = Ray.new(currentBrick.Position, Vector3.new(0, 0, 10));
 	local hit, pos = workspace:FindPartOnRay(ray, currentBrick);
@@ -107,6 +105,7 @@ function step(currentBrick)
 	
 	c.Parent = script;
 	numSteps = numSteps + 1;
+	wait();
 	step(c);
 	
 end
@@ -127,7 +126,6 @@ function restart()
 	c.Position = Vector3.new(0, 0, 0);
 	c.Parent = script;
 	numSteps = 1;
-	wait(2);
 	step(c);
 	
 end
