@@ -88,20 +88,15 @@ function step(currentBrick)
 	
 	if (toBuild == 1) then
 		c.Position = currentBrick.Position + Vector3.new(0, 0, 10);
-	end
-	if (toBuild == 2) then
+	elseif (toBuild == 2) then
 		c.Position = currentBrick.Position + Vector3.new(0, 0, -10);
-	end
-	if (toBuild == 3) then
+	elseif (toBuild == 3) then
 		c.Position = currentBrick.Position + Vector3.new(-10, 0, 0);
-	end
-	if (toBuild == 4) then
+	elseif (toBuild == 4) then
 		c.Position = currentBrick.Position + Vector3.new(10, 0, 0);
-	end
-	if (toBuild == 5) then
+	elseif (toBuild == 5) then
 		c.Position = currentBrick.Position + Vector3.new(0, 10, 0);
-	end
-	if (toBuild == 6) then
+	elseif (toBuild == 6) then
 		c.Position = currentBrick.Position + Vector3.new(0, -10, 0);
 	end
 	
