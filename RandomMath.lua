@@ -3,7 +3,11 @@ local numSteps = 1;
 local brick = Instance.new("Part");
 brick.Anchored = true;
 brick.Size = Vector3.new(10, 10, 10);
-brick.Color = Color3.fromRGB (255, 0, 0);
+brick.Material = "SmoothPlastic";
+local r = 255;
+local g = 255;
+local b = 255;
+brick.Color = Color3.fromRGB (r, g, b);
 brick.CanCollide = false;
 local numIterations = 0;
 local totalSteps = 0;
@@ -97,10 +101,23 @@ function step(currentBrick)
 		c.Position = currentBrick.Position + Vector3.new(0, -10, 0);
 	end
 	
+	r = r + rng:NextInteger(-3, 3);
+	if (r < 0) then r = 0; end
+	if (r > 255) then r = 255; end
+	
+	g = g + rng:NextInteger(-3, 3);
+	if (g < 0) then g = 0; end
+	if (g > 255) then g = 255; end
+	
+	b = b + rng:NextInteger(-3, 3);
+	if (b < 0) then b = 0; end
+	if (b > 255) then b = 255; end
 	
 	if (currentBrick) then
-		currentBrick.Color = Color3.fromRGB (numSteps % 255, numSteps % 255, numSteps % 255);
+		currentBrick.Color = Color3.fromRGB(r, g, b);
 	end
+	
+	c.Color = Color3.fromRGB(0, 0, 0);
 	
 	c.Parent = script;
 	numSteps = numSteps + 1;
@@ -122,6 +139,10 @@ function restart()
 	end
 	
 	local c = brick:Clone();
+	r = 255;
+	g = 255;
+	b = 255;
+	c.Color = Color3.fromRGB (r, g, b);
 	c.Position = Vector3.new(0, 0, 0);
 	c.Parent = script;
 	numSteps = 1;
