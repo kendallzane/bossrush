@@ -4,6 +4,7 @@ local brick = Instance.new("Part");
 brick.Anchored = true;
 brick.Size = Vector3.new(10, 10, 10);
 brick.Color = Color3.fromRGB (255, 0, 0);
+brick.CanCollide = false;
 local numIterations = 0;
 local totalSteps = 0;
 
@@ -65,8 +66,6 @@ function step(currentBrick)
 		local average = totalSteps / numIterations;
 		print("Average:", average);
 		print();
-		wait(1);
-		--restart();
 		return;
 	end
 	
@@ -105,7 +104,7 @@ function step(currentBrick)
 	
 	c.Parent = script;
 	numSteps = numSteps + 1;
-	wait();
+	wait(0.01);
 	step(c);
 	
 end
@@ -130,5 +129,7 @@ function restart()
 	
 end
 
-
-restart();
+while true do
+	restart();
+	wait(1);
+end
